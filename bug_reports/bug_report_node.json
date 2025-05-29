@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 10,
+  "buggy_line": "def successor(self):",
+  "bug_type": "Name Shadowing",
+  "explanation": "The method `successor` is defined using the name that shadows an instance variable 'self.successor'. While this doesn't cause a syntax error, it can lead to undesired behavior",
+  "fix_suggestion": "Rename the method to avoid shadowing the instance variable. For example, change the method name to 'get_successor().'”
+}
+```

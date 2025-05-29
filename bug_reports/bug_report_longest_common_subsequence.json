@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 6,
+  "buggy_line": "return a[0] + longest_common_subsequence(a[1:], b)",
+  "bug_type": "Logical Error",
+  "explanation": "The current implementation of the function does not account for the case where part of `b` is ahead of part of `a`. If a[0] == b[0], it assumes that the next portion of the longest common subsequence is in both b[1:]. In some cases there may be more substring that is input a[0] that could be the substring",
+  "fix_suggestion": "return a[0] + longest_common_subsequence(a[1:], b[1:]) - This will ensure the longest common subsequence continues by removing both characters(a[0] and b[0]) from the string"
+}
+```

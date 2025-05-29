@@ -1,0 +1,10 @@
+```json
+{
+  "line_number": 11,
+  "buggy_line": "return binsearch(0, len(arr))",
+  "bug_type": "Logical Error",
+  "explanation": "The `binsearch` function will lead to an infinite loop because it never calls `binsearch(start, mid-1)`, `end` or  `mid`.",
+  "fix_suggestion": "Update `end` to `mid` in the recursive call `return binsearch(start,mid)`."
+}
+
+```

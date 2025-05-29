@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 2,
+  "buggy_line": "    nextnode = node.successor",
+  "bug_type": "AttributeError",
+  "explanation": "The attribute 'successor' is not defined for the 'node' object. Typically, in a singly-linked list, the next node is accessed using the 'next' attribute instead of 'successor'. Assigning 'next' properly is standard in this context, which may result from a local misdefinition.",
+  "fix_suggestion": "Change 'node.successor' to 'node.next'"
+}
+```

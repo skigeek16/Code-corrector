@@ -1,0 +1,8 @@
+```json
+{
+  "line_number": 12,
+  "buggy_line": "return [1] + (len(digit_list)) * [0] + [1]",
+  "bug_type": "Logical Error",
+  "explanation": "The line return [1] + (len(digit_list)) * [0] + [1] assumes that the length of digit_list will always result in a correct palindrome. This doesn't handle the second digit case when incrementing a digit from 9.  If the result of adding 1 at digit[high_mid] results in a carryin operation of the right half simulate", .
+  "fix_suggestion": "Redirect back to the logic that brings the digit halfway to adopt the figure's significants from both high mid and low mid. - In line 14 after we have dealt with non 9 figure" }
+```

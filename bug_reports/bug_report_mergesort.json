@@ -1,0 +1,11 @@
+```json
+
+{
+  "line_number": 16,
+  "buggy_line": "result.extend(left[i:] or right[j:])",
+  "bug_type": "Logical Error",
+  "explanation": "The expression 'left[i:] or right[j:]' is incorrectly used. The 'or' operator in Python will only return the first truthy value it encounters. This will always return 'right[j:] because right[j:] is guaranteed to be a non-empty list at this point. Correct usage should concatenate the remaining elements from both lists.",
+  "fix_suggestion": "result.extend(left[i:])\nresult.extend(right[j:])"
+}
+
+```

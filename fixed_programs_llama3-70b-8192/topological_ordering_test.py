@@ -1,0 +1,3 @@
+[print(x.value, end=" ") for x in topological_ordering([five, seven, three, eleven, eight, two, nine, ten]) if topological_ordering([five, seven, three, eleven, eight, two, nine, ten]) is not None]
+[print(x.value, end=" ") for x in topological_ordering([zero, one, two, three, four, five]) if topological_ordering([zero, one, two, three, four, five]) is not None]
+[print(x.value, end=" ") for x in topological_ordering([milk, egg, oil, mix, syrup, griddle, pour, turn, eat]) if topological_ordering([milk, egg, oil, mix, syrup, griddle, pour, turn, eat]) is not None]

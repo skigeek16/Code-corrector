@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 11,
+  "buggy_line": "    weight_by_edge[u, v] = min(weight_by_node[u] + weight, weight_by_node[v])",
+  "bug_type": "Logical Error",
+  "explanation": "The Bellman-Ford algorithm should update the weight of node `v` by taking the minimum of the current value and the new computed value (`weight_by_node[u] + weight`). However, the code is incorrectly trying to update `weight_by_edge[u, v]` which is not the correct structure to hold the shortest path distances to nodes. This should be updated in `weight_by_node` instead.",
+  "fix_suggestion": "Change the line `weight_by_edge[u, v] = min(weight_by_node[u] + weight, weight_by_node[v])` to `weight_by_node[v] = min(weight_by_node[v], weight_by_node[u] + weight)`."
+}
+```

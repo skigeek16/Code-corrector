@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 5,
+  "buggy_line": "helper = ({1, 2, 3} - {start} - {end}).pop()",
+  "bug_type": "logical_error",
+  "explanation": "The expression ({1, 2, 3} - {start} - {end}).pop() incorrectly calculates the 'helper' peg. The subtraction operation between sets does not behave as expected. Subtracting sets removes elements present in the first set and none in the second.",
+  "fix_suggestion": "Use a list to select an element other than start if it exists, or end if start does not exist."
+}
+```

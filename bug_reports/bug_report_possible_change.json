@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 7,
+  "buggy_line": "return possible_change(coins, total - first) + possible_change(rest, total)",
+  "bug_type": "Logical error",
+  "explanation": "In the recursive call of possible_change(rest, total), the total should be decreased by the first coin taken, just as in the first recursive call. The current implementation keeps the original value of total which can potentially lead to infinite loops",
+  "fix_suggestion": "Change the recursive call of `possible_change(rest, total)` to `possible_change(rest, total - first)` to account for the current coin selected in both recursive calls."
+}
+```

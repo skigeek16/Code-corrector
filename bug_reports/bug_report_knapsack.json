@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 6,
+  "buggy_line": "memo[i, j] = memo[i - 1, j]",
+  "bug_type": "Logical Error",
+  "explanation": "The line `memo[i, j] = memo[i - 1, j]` is intended to copy the value from the previous item's state, but this line should be placed after handling the inclusion of the current item to reflect the correct base value to use and maintain the minimum value at this stage.",
+  "fix_suggestion": "Move the line `memo[i, j] = memo[i - 1, j]` to after the check for weight < j. This ensures that the value is updated correctly only after considering whether the current item can be included without exceeding the capacity."
+}
+```

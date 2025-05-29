@@ -1,0 +1,30 @@
+```json
+{
+  "line_number": 8,
+  "buggy_line": "lines.append(line)",
+  "bug_type": "Logic Error",
+  "explanation": "The line `lines.append(line)` appends the extracted line to the `lines` list, but it does not account for the additional spaces that might be present in the original text at the end of the line.",
+  "fix_suggestion": "Add an additional space if necessary to handle leading or trailing spaces properly."
+}
+```
+
+Here is the corrected code:
+
+```python
+def wrap(text, cols):
+    lines = []
+    while len(text) > cols:
+        end = text.rfind(' ', 0, cols + 1)
+        if end == -1:
+            end = cols
+        line, text = text[:end], text[end:]
+        if text:
+            text = text.lstrip()  # Remove leading spaces from the new sub-string
+        lines.append(line)
+
+    lines.append(text)
+    return lines
+```
+
+### Summary:
+The bug is that the current implementation might not handle the spaces at the beginning or end of the original text correctly, leading to incorrect line breaks. The suggested fix is to add an additional space if necessary to handle leading or trailing spaces properly.

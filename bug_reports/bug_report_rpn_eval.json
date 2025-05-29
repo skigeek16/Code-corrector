@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 14,
+  "buggy_line": "            stack.append(op(token, a, b))",
+  "bug_type": "Logical Error",
+  "explanation": "The order of operands `a` and `b` when popped from the stack is incorrect. The correct order should be `b` followed by `a` because Reverse Polish Notation (RPN) expects the last operand to be popped first.",
+  "fix_suggestion": "Swap the order of `a` and `b` when calling the `op` function to `stack.append(op(token, b, a))`."
+}
+```

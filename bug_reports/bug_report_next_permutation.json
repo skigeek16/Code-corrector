@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 8,
+  "buggy_line": "next_perm = list(perm)",
+  "bug_type": "Logical Error",
+  "explanation": "The line `next_perm = list(perm)` is creating a shallow copy of the list `perm` rather than running operations directly on `perm`. It's unnecessary to use the returned next_perm because later a different returned statement fetches the changed 'perm' which isn't working since the original list cannot be reversed.",
+  "fix_suggestion": "Simply manipulate the original list `perm` and find a way to neatly reverse the suffix"
+}
+```

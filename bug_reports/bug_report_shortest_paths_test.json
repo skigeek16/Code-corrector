@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 28,
+  "buggy_line": "result =  shortest_paths('A', graph3)",
+  "bug_type": "Negative value for cycle in shortest paths graph",
+  "explanation": "Running the shortest path algorithm on a graph with negative weight cycles is typically problematic because it can lead to infinite cycles and invalid results. Bellman-Ford is designed to detect the negative cycle, it cannot provide a correct result without any modification for positive value cycle detection. The output for such a graph is not reliable.",
+  "fix_suggestion": "Verify whether shortest path is actually feasible with positive weight paths in a graph and ensure the shortest path function is aware of this and the output should be considered as null/empty if cyclic path exist, as cycle paths in case of shortest is erroneous and can lead to negate invalid results. Check the actual shortest path function handling for these cases."
+}
+```

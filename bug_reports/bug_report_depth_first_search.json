@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 10,
+  "buggy_line": "return any(search_from(nextnode) for nextnode in node.successors)",
+  "bug_type": "AttributeError",
+  "explanation": "The `node.successors` attribute should return a non-iterable collection.  However, `node.successors` will raise an AttributeError in context of loop iteration which you should iterate over the values in `node.successors` before passing them to `search_from`. The issue is that `node.successors` might not be iterable, leading the code to fail with an AttributeError.",
+  "fix_suggestion": "Use node.successors.values() if successors is a dictionary-like collection or alternatively explicitly store node.successors in a list or set before iteration."
+}
+```

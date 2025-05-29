@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 6,
+  "buggy_line": "  max_so_far = max(max_so_far, max_ending_here)",
+  "bug_type": "Logic Error",
+  "explanation": "The `max_so_far` variable is initialized to 0 and thus the implementation will not correctly handle arrays containing all negative numbers. Even when all elements are negative numbers, the current logic will return 0 instead of the largest sum.",
+  "fix_suggestion": "Before starting the loop, you need to ensure that `max_so_far` is initialized to the first element of the array. Also change `max_so_far = max(max_so_far, max_ending_here)` in the loop to `max_so_far = max(max_so_far, arr[i])` and then use a condition to compare current element with `max_ending_here`."
+}
+```

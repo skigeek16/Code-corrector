@@ -1,0 +1,5 @@
+station1 = Node("Westminster")
+station2 = Node("Waterloo", None, [station1])
+station3 = Node("Trafalgar Square", [station1, station2])
+station5 = Node("London Bridge", [station4, station3])
+station6 = Node("Tottenham Court Road", [station5, station4])

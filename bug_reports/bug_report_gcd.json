@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 5,
+  "buggy_line": "return gcd(a % b, b)",
+  "bug_type": "Logical error",
+  "explanation": "The recursive call to `gcd(a % b, b)` is incorrect. The second argument should be `a % b` instead of `b`. This incorrect swap prevents the function from correctly computing the GCD for non-zero numbers.",
+  "fix_suggestion": "Change the `return gcd(a % b, b)` line to `return gcd(b, a % b)`."
+}
+```

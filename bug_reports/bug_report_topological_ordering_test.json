@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 33,
+  "buggy_line": "try: [print(x.value, end=\" \") for x in topological_ordering([five, seven, three, eleven, eight, two, nine, ten])]",
+  "bug_type": "Logical Error",
+  "explanation": "This function calls the 'topological_ordering' function and prints the values during its execution. However, Node is a generic data type that doesn't always have a 'value' attribute. In this example, the attribute name for the value of the node is `data`",
+  "fix_suggestion": "Change print( x.value ) to print( x.data )"
+}
+```

@@ -1,0 +1,9 @@
+```json
+{
+  "line_number": 12,
+  "buggy_line": "while opstack and precedence[token] <= precedence[opstack[-1]]:",
+  "bug_type": "Logical Error",
+  "explanation": "The condition inside the while loop checks 'precedence[token] <= precedence[opstack[-1]]'. This should be a strict comparison (i.e., '<') when the current token is a left parenthesis. This would be handled if the problem had left and right brackets.",
+  "fix_suggestion": "The condition should additionally check for left parenthesis explicitly, and change to '<' instead of '<=' t"
+}
+```
