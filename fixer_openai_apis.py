@@ -10,7 +10,8 @@ PYTHON_BUGGY_DIR = "python_programs"
 PYTHON_FIXED_DIR = "fixed_programs"
 PYTHON_TESTCASE_DIR = "python_testcases"
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY")
-TOGETHER_MODEL = "mistralai/Mistral-Small-24B-Instruct-2501"
+TOGETHER_MODEL = ""#using different models accordingly
+
 
 os.makedirs(PYTHON_FIXED_DIR, exist_ok=True)
 
